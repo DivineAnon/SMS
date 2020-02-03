@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateHeaderProgramsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('header_programs', function (Blueprint $table) {
@@ -23,11 +18,6 @@ class CreateHeaderProgramsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('header_programs');

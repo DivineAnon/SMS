@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDetailAbsensTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('detail_absens', function (Blueprint $table) {
@@ -25,11 +20,6 @@ class CreateDetailAbsensTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('detail_absens');

@@ -6,31 +6,21 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateProgramsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $tabel->string('id_header_program');
-            $tabel->string('id_sekolah');
-            $tabel->string('id_kelas');
-            $tabel->string('id_murid');
-            $tabel->date('tanggal');
-            $tabel->string('nilai');
+            $table->string('id_header_program');
+            $table->string('id_sekolah');
+            $table->string('id_kelas');
+            $table->string('id_murid');
+            $table->date('tanggal');
+            $table->string('nilai');
             $table->timestamps();
             $table->softDeletes();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('programs');

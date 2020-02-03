@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDistribusiMapelsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('distribusi_mapels', function (Blueprint $table) {
@@ -23,11 +18,6 @@ class CreateDistribusiMapelsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('distribusi_mapels');
