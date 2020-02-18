@@ -1,32 +1,43 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
+require('../../public/js/jquery-3.4.0.min.js');
+require('../../public/js/jquery.dataTables.min.js');
+require('../../public/plugin/DataTables-Bootstrap4/js/dataTables.bootstrap4.min.js');
+require('../../public/plugin/repeatable/jquery.repeatable.js');
+require('../../public/js/popper.min.js')
 
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import DataTable from 'laravel-vue-datatable';
+import VueRouter from 'vue-router';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.use(CKEditor);
+Vue.use(DataTable, VueAxios, axios, VueRouter);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+//Sweet Alert
+import Swal from 'sweetalert2';
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+window.Toast = Toast;
+
+//Currency
+import VueCurrencyFilter from 'vue-currency-filter';
+Vue.use(VueCurrencyFilter);
+Vue.use(VueCurrencyFilter, {
+    thousandsSeparator: '.',
+    fractionCount: 0,
+    fractionSeparator: ',',
+    symbolPosition: 'front',
+    symbolSpacing: true
+});
 
 const app = new Vue({
     el: '#app'

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Course</title>
+@yield('title')
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Course Project">
+<meta name="description" content="Sistem Manajemen Sekolah">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 <link rel="stylesheet" type="text/css" href="{{asset("css/bootstrap.min.css")}}">
 <link href="{{asset("plugins/fontawesome-free-5.0.1/css/fontawesome-all.css")}}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{{asset("plugins/OwlCarousel2-2.2.1/owl.carousel.css")}}">
@@ -97,7 +97,9 @@
 	</div>
 	
 	<!-- Home -->
-
+<div class="page" id="app">
+    @yield('content')
+</div>
 	<div class="home">
 
 		<!-- Hero Slider -->
